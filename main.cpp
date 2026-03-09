@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LinkedList.h"
 #include <random>
+#include <cstring>
 
 typedef unsigned short digit;
 
