@@ -47,7 +47,7 @@ public:
         }
     }
 
-    size_t size() const { return size_; }
+    size_t size() const { return size_; } // методы доступа к размеру
     bool empty() const { return size_ == 0; }
 
     void push_head(T value) {
@@ -114,7 +114,7 @@ public:
         }
     }
 
-    T& operator[](size_t idx) {
+    T& operator[](size_t idx) {  // доступ по индексу
                 if (idx >= size_) throw std::length_error("Индекс за пределами списка");
 
         Node* it = nullptr;
@@ -144,7 +144,7 @@ public:
         return it->value;
     }
 
-    void delete_node(T value) {
+    void delete_node(T value) { // удаление узлов по значению
         Node* it = head_;
         while (it) {
             if (it->value == value) {
@@ -168,7 +168,7 @@ public:
     }
 };
 
-template<typename T> // TODO: По возможности решить проблему с квадратичной сложностью.
+template<typename T> 
 std::ostream& operator<<(std::ostream& os, const LinkedList<T>& list) {
     for (size_t i = 0; i < list.size(); i++) {
         os << list[i] << " ";
